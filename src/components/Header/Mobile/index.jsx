@@ -5,7 +5,7 @@ function HeaderMobile() {
   return (
     <header>
       <p className="Title">HelpGo</p>
-      <img src={TranslateIcon} />
+      <img alt="Header" src={TranslateIcon} />
     </header>
   )
 }
