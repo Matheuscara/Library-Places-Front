@@ -1,0 +1,39 @@
+:root {
+    --color-1: #3EB489;
+    --color-2: #18191F;
+    --color-3: #696969;
+    --color-4: #292D32;
+    --color-5: rgba(62, 180, 137, 0.28);
+
+
+    --border-Radius-1: 16px;
+
+    --font-Style-1: "Metropolis";
+
+    --font-Size-1: 35px;
+    --font-Size-2: 24px;
+    --font-Size-3: 16px;
+    --font-Size-4: 13px;
+    --font-Size-5: 11px;
+
+    --font-Weight-1: 900;
+    --font-Weight-2: 700;
+    --font-Weight-3: 500;
+    --font-Weight-4: 400;
+}
+
+.App {
+    font-family: var(--font-Style-1);
+    color: var(--color-2);
+    font-weight: var(--font-Weight-4);
+}
+
+p {
+    margin: 20px 0px;
+}
+
+@media screen and (max-width: 500px) {
+    :root {
+        margin: 0px 20px;
+    }
+}
