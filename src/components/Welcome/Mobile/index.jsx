@@ -1,8 +1,15 @@
 import './style.css'
+import WelcomeImage from './Images/WelcomeImage.png'
 
 function WelcomeMobile() {
   return (
-    <p>Welcome</p>
+    <div className="Welcome">
+      <img className="img" src={WelcomeImage} />
+      <div class="topleftAbsolute">
+        <p>Looking for a better</p>
+        <p className="textSecondary">Future</p>
+      </div>
+    </div>
   )
 }
 

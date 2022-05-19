@@ -1,0 +1,21 @@
+.Welcome {
+    position: relative;
+}
+
+.topleftAbsolute {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    font-weight: var(--font-Weight-2);
+    font-size: var(--font-Size-2);
+}
+
+.textSecondary {
+    color: var(--color-1)
+}
+
+.img {
+    width: 100%;
+    height: auto;
+}
