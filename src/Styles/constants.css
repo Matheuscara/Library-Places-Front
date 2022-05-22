@@ -23,7 +23,7 @@
     --font-Weight-4: 400;
 }
 
-.App {
+* {
     font-family: var(--font-Style-1);
     color: var(--color-2);
     font-weight: var(--font-Weight-4);

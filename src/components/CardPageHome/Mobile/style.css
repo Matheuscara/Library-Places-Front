@@ -1,0 +1,28 @@
+.card-Home-Page-Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.card-home {
+    padding-right: 3px;
+    margin-bottom: 5px;
+}
+
+.card-home {
+    min-width: 109px;
+    min-height: 172px;
+}
+
+.card-home-title {
+    font-size: var(--font-Size-3);
+    font-weight: var(--font-Weight-3);
+    color: var(--color-2);
+}
+
+.card-home-subtitle {
+    font-size: var(--font-Size-4);
+    font-weight: var(--font-Weight-3);
+    color: var(--color-3);
+}
