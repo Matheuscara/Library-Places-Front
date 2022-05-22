@@ -6,7 +6,7 @@ function CardHomePageMobile({ img, title, subtitle }) {
   const navigate = useNavigate()
 
   const createPath = () => {
-    const path = generatePath('/Categori/:title', { title: title })
+    const path = generatePath('/Category/:title', { title: title })
     navigate(path)
   }
   

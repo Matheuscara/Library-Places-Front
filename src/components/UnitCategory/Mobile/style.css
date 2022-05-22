@@ -1,0 +1,17 @@
+.imageUnitCategoryMobile {
+    width: 100%;
+}
+
+.titleUnitCategoryMobile {
+    font-size: var(--font-Size-3);
+    margin: 5px 0px 0px 0px;
+    color: var(--color-2);
+    font-weight: var(--font-Weight-3);
+}
+
+.subtitleUnitCategoryMobile {
+    font-size: var(--font-Size-5);
+    margin: 0px 0px 15px 0px;
+    color: var(--color-3);
+    font-weight: var(--font-Weight-3);
+}
