@@ -18,3 +18,9 @@
     background-color: var(--color-1) !important;
     color: var(--color-6) !important;
 }
+
+
+::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}

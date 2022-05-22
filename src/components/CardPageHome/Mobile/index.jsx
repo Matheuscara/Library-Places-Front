@@ -1,16 +1,26 @@
 import './style.css'
 import testImage from './Images/testImage.png'
-import Slide from 'react-reveal/Slide'
+import { generatePath, useNavigate } from 'react-router-dom'
 
 function CardHomePageMobile({ img, title, subtitle }) {
+  const navigate = useNavigate()
+
+  const createPath = () => {
+    const path = generatePath('/Categori/:title', { title: title })
+    navigate(path)
+  }
+  
   return (
-    <Slide right>
-      <div className="card-home">
-        <img className="card-home" src={img || testImage} alt="testImage" />
-        <div className="card-home-title">{title || 'teste'}</div>
-        <div className="card-home-subtitle">{subtitle || 'teste'}</div>
-      </div>
-    </Slide>
+    <div className="card-home">
+      <img
+        className="card-home"
+        onClick={() => createPath()}
+        src={img || testImage}
+        alt="testImage"
+      />
+      <div className="card-home-title">{title || 'teste'}</div>
+      <div className="card-home-subtitle">{subtitle || 'teste'}</div>
+    </div>
   )
 }
 

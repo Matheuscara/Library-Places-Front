@@ -8,32 +8,32 @@ function CardHomePage() {
   const testeBuild = [
     {
       image: testImage,
-      title: 'teste',
+      title: 'Police',
       description: 'subtitle',
     },
     {
       image: testImage,
-      title: 'teste',
+      title: 'Pharmacy',
       description: 'subtitle',
     },
     {
       image: testImage,
-      title: 'teste',
+      title: 'Hospital',
       description: 'subtitle',
     },
     {
       image: testImage,
-      title: 'teste',
+      title: 'Bank',
       description: 'subtitle',
     },
     {
       image: testImage,
-      title: 'teste',
+      title: 'Airport',
       description: 'subtitle',
     },
     {
       image: testImage,
-      title: 'teste',
+      title: 'Bus Station',
       description: 'subtitle',
     },
     {
