@@ -3,7 +3,15 @@ import './style.css'
 function CategoryMobile() {
   return (
     <div>
-      category
+      Categories
+      <ul className="listUlCategories">
+        <li className="selected">Emergency</li>
+        <li>Locomotion</li>
+        <li>Amusement</li>
+        <li>snack bars</li>
+        <li>Amusement</li>
+        <li>Amusement</li>
+      </ul>
     </div>
   )
 }
