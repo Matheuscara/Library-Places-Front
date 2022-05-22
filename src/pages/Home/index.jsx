@@ -7,7 +7,7 @@ import CardHomePageMobile from '../../components/CardPageHome/index'
 function Home() {
   return (
     <div>
-      <Header />
+      <Header beReturn={false} />
       <Welcome />
       <Input />
       <Category />

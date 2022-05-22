@@ -1,12 +1,16 @@
 import HeaderMobile from './Mobile/index'
 import useWindowSize from '../Util/windowSize'
 
-function Header() {
+function Header({ beReturn, locationReturn }) {
   const size = useWindowSize()
 
   return (
     <div>
-      {size.width < 500 ? <HeaderMobile /> : <p>site</p>}
+      {size.width < 500 ? (
+        <HeaderMobile locationReturn={locationReturn} beReturn={beReturn} />
+      ) : (
+        <p>site</p>
+      )}
     </div>
   )
 }

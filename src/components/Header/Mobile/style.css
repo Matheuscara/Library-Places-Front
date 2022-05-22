@@ -1,4 +1,4 @@
-header {
+.headerNotBeRerturn {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,4 +8,10 @@ header {
     font-weight: var(--font-Weight-1);
     color: var(--color-1);
     font-size: var(--font-Size-1);
+}
+
+.headerBeRerturn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
