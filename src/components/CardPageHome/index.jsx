@@ -2,6 +2,7 @@ import useWindowSize from '../Util/windowSize'
 import CardHomePageMobile from './Mobile/index'
 import testImage from './Mobile/Images/testImage.png'
 import './Mobile/style.css'
+import Flip from 'react-reveal/Flip'
 
 function CardHomePage() {
   const size = useWindowSize()
@@ -67,15 +68,17 @@ function CardHomePage() {
     <div>
       {size.width < 500 ? (
         <div className="card-Home-Page-Container">
-            {testeBuild.map((element) => {
-              return (
+          {testeBuild.map((element) => {
+            return (
+              <Flip left>
                 <CardHomePageMobile
                   img={element.image}
                   title={element.title}
                   description={element.description}
                 />
-              )
-            })}
+              </Flip>
+            )
+          })}
         </div>
       ) : (
         <p>site</p>
