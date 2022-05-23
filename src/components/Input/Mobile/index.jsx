@@ -22,6 +22,7 @@ function InputMobile() {
           onChange: setValue,
         }}
         apiOptions={{ language: 'pt-br' }}
+        
       />
     </div>
   )
