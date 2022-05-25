@@ -1,6 +1,10 @@
 import './style.css'
+import { useSelector } from 'react-redux'
+import { selectCategory } from '../../../features/category/CategorySlice'
 
 function CategoryMobile() {
+  const category = useSelector(selectCategory)
+
   return (
     <div>
       Categories
