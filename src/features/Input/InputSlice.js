@@ -1,9 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: "sim",
+  value: 'sim',
   status: 'undefined',
-};
+}
+
+// export const getInputApi = createAsyncThunk(
+//   'InputSlice/requestApi',
+//   async ( id ) => {
+//     return fetch(`http://localhost:3001/places/${id}`).then((res) => res.json())
+//   }
+// )
 
 export const InputSlice = createSlice({
   name: 'input',
@@ -11,25 +18,23 @@ export const InputSlice = createSlice({
 
   // Reducers
   reducers: {
-    
     // actions
     changeaDress: (state, action) => {
-      state.value = action.payload;
+      state.value = action.payload
     },
   },
 
-
   // extraReducers: (builder) => {
   //   builder
-  //     .addCase(incrementAsync.pending, (state) => {
-  //       state.status = 'loading';
+  //     .addCase(getInputApi.pending, (state) => {
+  //       state.status = 'loading'
   //     })
-  //     .addCase(incrementAsync.fulfilled, (state, action) => {
-  //       state.status = 'idle';
-  //       state.value += action.payload;
-  //     });
+  //     .addCase(getInputApi.fulfilled, (state, action) => {
+  //       state.status = 'complete'
+  //       state.value = action.payload
+  //     })
   // },
-});
+})
 
 //exportando as actions
 export const { changeaDress } = InputSlice.actions

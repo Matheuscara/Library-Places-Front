@@ -1,8 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: "",
-};
+  value: '',
+}
+
+export const getCategoriesApi = createAsyncThunk(
+  'categorySlice/requestCategory',
+  async ({ latitude, longitude }) => {
+    return fetch(
+      `https://library-places-back.herokuapp.com/places/categories/${latitude.toString()}/${longitude.toString()}/${5000}`
+    ).then((res) => res.json())
+  }
+)
 
 export const categorySlice = createSlice({
   name: 'category',
@@ -10,25 +19,23 @@ export const categorySlice = createSlice({
 
   // Reducers
   reducers: {
-    
     // actions
     changeCategory: (state, action) => {
-      state.value = action.payload;
+      state.value = action.payload
     },
   },
 
-
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(incrementAsync.pending, (state) => {
-  //       state.status = 'loading';
-  //     })
-  //     .addCase(incrementAsync.fulfilled, (state, action) => {
-  //       state.status = 'idle';
-  //       state.value += action.payload;
-  //     });
-  // },
-});
+  extraReducers: (builder) => {
+    builder
+      .addCase(getCategoriesApi.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(getCategoriesApi.fulfilled, (state, action) => {
+        state.status = 'complete'
+        state.value = action.payload
+      })
+  },
+})
 
 //exportando as actions
 export const { changeCategory } = categorySlice.actions
