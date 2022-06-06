@@ -6,7 +6,7 @@ import mockUnitCategory3 from './Mobile/Images/mockUnitCategory3.png'
 
 function UnitCategory() {
   const size = useWindowSize()
-  
+
   const MockCategory = [
     {
       image: mockUnitCategory,
@@ -27,7 +27,7 @@ function UnitCategory() {
 
   return (
     <div>
-      {size.width < 500 ? (
+      {size.width < 800 ? (
         <div>
           {MockCategory.map((category) => {
             return (

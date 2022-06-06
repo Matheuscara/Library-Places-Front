@@ -8,7 +8,9 @@ export const getCategoriesApi = createAsyncThunk(
   'categorySlice/requestCategory',
   async ({ latitude, longitude }) => {
     return fetch(
-      `https://library-places-back.herokuapp.com/places/categories/${latitude.toString()}/${longitude.toString()}/${5000}`
+      `${
+        process.env.GOOGLE_PLACES_API || 'http://localhost:3001'
+      }/places/categories/${latitude.toString()}/${longitude.toString()}/${5000}`
     ).then((res) => res.json())
   }
 )

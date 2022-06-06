@@ -6,8 +6,9 @@
     --color-5: rgba(62, 180, 137, 0.28);
     --color-6: #FFFFFF;
     --color-7: rgba(78, 220, 168, 0.28);
-
+    --color-8: #F0F5FF;
     --border-Radius-1: 16px;
+    --border-Radius-2: 10px;
 
     --font-Style-1: "Metropolis";
 
@@ -32,11 +33,34 @@
 }
 
 p {
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 
-@media screen and (max-width: 500px) {
+
+
+@media screen and (min-width: 1250px) {
+    :root {
+        padding: 0px 200px;
+    }
+}
+
+
+@media screen and (max-width: 1250px) {
+    :root {
+        margin: 0px 100px;
+    }
+
+    p {
+        margin: 15px 0px;
+    }
+}
+
+@media screen and (max-width: 800px) {
     :root {
         margin: 0px 20px;
+    }
+
+    p {
+        margin: 20px 0px;
     }
 }

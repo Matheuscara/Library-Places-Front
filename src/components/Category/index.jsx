@@ -38,7 +38,7 @@ function Category() {
 
   const size = useWindowSize()
 
-  return <div>{size.width < 500 ? <CategoryMobile /> : <p>dressId</p>}</div>
+  return <div>{size.width < 800 ? <CategoryMobile /> : <p>dressId</p>}</div>
 }
 
 export default Category

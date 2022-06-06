@@ -66,7 +66,7 @@ function CardHomePage() {
 
   return (
     <div>
-      {size.width < 500 ? (
+      {size.width < 800 ? (
         <div className="card-Home-Page-Container">
           {testeBuild.map((element) => {
             return (

@@ -5,13 +5,6 @@ const initialState = {
   status: 'undefined',
 }
 
-// export const getInputApi = createAsyncThunk(
-//   'InputSlice/requestApi',
-//   async ( id ) => {
-//     return fetch(`http://localhost:3001/places/${id}`).then((res) => res.json())
-//   }
-// )
-
 export const InputSlice = createSlice({
   name: 'input',
   initialState,

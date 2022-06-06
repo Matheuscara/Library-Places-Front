@@ -7,7 +7,7 @@ function CardPagePlace() {
 
   return (
     <div>
-      {size.width < 500 ? (
+      {size.width < 800 ? (
         <div>
           <CardPagePlaceMobile />
         </div>
