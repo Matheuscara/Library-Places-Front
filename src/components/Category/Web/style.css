@@ -1,0 +1,33 @@
+.listUlCategories {
+    list-style-type: none;
+    display: flex;
+    padding: 0px;
+    overflow: auto;
+    justify-content: center;
+}
+
+.category {
+    font-size: var(--font-Size-2);
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.listUlCategories li {
+    padding: 15px 12px;
+    background-color: var(--color-5);
+    border-radius: var(--border-Radius-1);
+    font-size: var(--font-Size-4);
+    min-width: fit-content;
+    margin-right: 10px;
+}
+
+.selected {
+    background-color: var(--color-1) !important;
+    color: var(--color-6) !important;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}

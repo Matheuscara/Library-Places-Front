@@ -4,6 +4,10 @@
     margin: 90px 0px;
 }
 
+.textWeb {
+    width: 80%;
+}
+
 .WelcomeWeb {
     display: flex;
 }

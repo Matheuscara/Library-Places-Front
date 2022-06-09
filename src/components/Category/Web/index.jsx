@@ -2,12 +2,12 @@ import './style.css'
 import { useSelector } from 'react-redux'
 import { selectCategory } from '../../../features/category/CategorySlice'
 
-function CategoryMobile() {
+function CategoryWeb() {
   const category = useSelector(selectCategory)
 
   return (
     <div>
-      Categories
+      <p className="category">Categories</p>
       {category ? (
         <ul className="listUlCategories">
           {category.map((element, index) => {
@@ -40,7 +40,7 @@ function CategoryMobile() {
                 </li>
               )
             }
-            
+
             if (
               element ===
               ('art_gallery',
@@ -78,7 +78,6 @@ function CategoryMobile() {
                 </li>
               )
             }
-            
           })}
         </ul>
       ) : (
@@ -95,4 +94,4 @@ function CategoryMobile() {
   )
 }
 
-export default CategoryMobile
+export default CategoryWeb

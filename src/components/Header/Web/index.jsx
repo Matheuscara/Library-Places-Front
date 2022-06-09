@@ -6,14 +6,17 @@ import { RiTranslate } from 'react-icons/ri'
 function HeaderWeb({ beReturn, locationReturn }) {
   const navigate = useNavigate()
   return (
-    <div>
+    <div className="headerWeb">
       {beReturn ? (
         <header className="headerBeRerturn">
-          <HiArrowLeft
-            size={25}
-            onClick={() => navigate(locationReturn || '/')}
-          />
-          <p className="Title">HelpGo</p>
+          <span className="spanSvg">
+            <HiArrowLeft
+              size={25}
+              onClick={() => navigate(locationReturn || '/')}
+            />
+          </span>
+
+          <p className="TitleWeb">HelpGo</p>
           <button className="headerButtom">Translate</button>
         </header>
       ) : (

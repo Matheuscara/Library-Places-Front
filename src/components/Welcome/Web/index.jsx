@@ -6,7 +6,7 @@ function WelcomeWeb() {
     <div className="WelcomeWeb">
       <div className="HelloWelcome">
         <p className="textSecondary">Hello 👋🏻</p>
-        <p>here we can help you find what you want</p>
+        <p className="textWeb">here we can help you find what you want</p>
         <button className="WelcomeButtom">Lets'Go</button>
       </div>
 

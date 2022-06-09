@@ -1,5 +1,7 @@
 import useWindowSize from '../Util/windowSize'
 import CardPagePlaceMobile from './Mobile/index'
+import CardPagePlaceWeb from './Web/index'
+
 import './Mobile/style.css'
 
 function CardPagePlace() {
@@ -12,7 +14,7 @@ function CardPagePlace() {
           <CardPagePlaceMobile />
         </div>
       ) : (
-        <p>site</p>
+        <CardPagePlaceWeb />
       )}
     </div>
   )

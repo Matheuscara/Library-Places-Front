@@ -1,5 +1,7 @@
 import useWindowSize from '../Util/windowSize'
 import CategoryMobile from './Mobile/index'
+import CategoryWeb from './Web/index'
+
 import { useSelector, useDispatch } from 'react-redux'
 import { selectAdress } from '../../features/Input/InputSlice'
 import { getCategoriesApi } from '../../features/category/CategorySlice'
@@ -38,7 +40,7 @@ function Category() {
 
   const size = useWindowSize()
 
-  return <div>{size.width < 800 ? <CategoryMobile /> : <p>dressId</p>}</div>
+  return <div>{size.width < 800 ? <CategoryMobile /> : <CategoryWeb />}</div>
 }
 
 export default Category
