@@ -7,7 +7,6 @@ function WelcomeWeb() {
       <div className="HelloWelcome">
         <p className="textSecondary">Hello 👋🏻</p>
         <p className="textWeb">here we can help you find what you want</p>
-        <button className="WelcomeButtom">Lets'Go</button>
       </div>
 
       <img alt="Welcome" className="imgWeb" src={WelcomeImage} />

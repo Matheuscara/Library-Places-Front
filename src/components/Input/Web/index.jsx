@@ -18,7 +18,7 @@ function InputWeb() {
       <div className="containerInput">
         <div className="elementsInput text">
           <p>
-            Enter your <span className="span">addres</span>
+            Enter your <span className="span">address</span>
           </p>
         </div>
         <div className="elementsInput input">
