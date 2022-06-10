@@ -16,10 +16,17 @@ function CategoryMobile() {
 
   const ChangeSelectCategory = (e) => {
     const selected = e.target
+    console.log(selected.className)
+
     if (selected.className === 'desable') {
-      document.querySelector('.selected').className = 'desable'
+      if (document.querySelector('.selected'))
+        document.querySelector('.selected').className = 'desable'
       selected.className = 'selected'
       setStateCategory(selected.getAttribute('value'))
+    } else if (selected.className === 'selected') {
+      setStateCategory('')
+
+      selected.className = 'desable'
     }
   }
 
