@@ -5,7 +5,7 @@ function WelcomeMobile() {
   return (
     <div className="title">
       <p className="textSecondary">Hello 👋🏻</p>
-      <p>how can i help you?</p>
+      <p>How can i help you?</p>
       <div className="Welcome">
         <img alt="Welcome" className="img" src={WelcomeImage} />
         <div class="topleftAbsolute">
