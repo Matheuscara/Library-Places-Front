@@ -1,0 +1,7 @@
+.FooterWeb {
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}

@@ -1,11 +1,11 @@
-.listUlCategories {
+.listUlCategoriesMobile {
     list-style-type: none;
     display: flex;
     padding: 0px;
     overflow: auto;
 }
 
-.listUlCategories li {
+.listUlCategoriesMobile li {
     padding: 15px 12px;
     background-color: var(--color-5);
     border-radius: var(--border-Radius-1);
@@ -24,4 +24,3 @@
     background: red;
     border-radius: 10px;
 }
-

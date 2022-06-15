@@ -12,4 +12,25 @@ export async function getAdressById(id) {
   }
 }
 
-export default { getAdressById }
+export async function getCategoriesById(id) {
+  try {
+    return axios
+      .get(`https://library-places-back.herokuapp.com/places/${id}`)
+      .then(function (response) {
+        return response.data.location
+      })
+      .then((location) => {
+        return axios
+          .get(
+            `https://library-places-back.herokuapp.com/places/categories/${location.latitude}/${location.longitude}/5000`
+          )
+          .then(function (response) {
+            return response.data
+          })
+      })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export default { getAdressById, getCategoriesById }

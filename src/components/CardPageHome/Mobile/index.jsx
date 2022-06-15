@@ -19,7 +19,7 @@ function CardHomePageMobile({ img, title, subtitle }) {
         alt="testImage"
       />
       <div className="card-home-title">{title || 'teste'}</div>
-      <div className="card-home-subtitle">{subtitle || 'teste'}</div>
+      <div className="card-home-subtitle">{subtitle || '----'}</div>
     </div>
   )
 }

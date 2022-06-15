@@ -1,159 +1,94 @@
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import useWindowSize from '../Util/windowSize'
 import CardHomePageMobile from './Mobile/index'
 import CardHomePageWeb from './Web/index'
 import testImage from './Mobile/Images/testImage.png'
-import testImage2 from './Web/Images/testImage.png'
+import { getCategoriesById } from '../Util/restAxios'
+import createGroupCategories from '../Util/createGroupCategories'
+import { selectAdress } from '../../features/Input/InputSlice'
+import { SelectCategory } from '../../features/selectCategory/selectCategory'
 
 import './Mobile/style.css'
 import Flip from 'react-reveal/Flip'
 
 function CardHomePage() {
-  const size = useWindowSize()
-  const testeBuild = [
-    {
-      image: testImage,
-      title: 'Police',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'Pharmacy',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'Hospital',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'Bank',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'Airport',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'Bus Station',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage,
-      title: 'teste',
-      description: 'subtitle',
-    },
-  ]
+  const [Categories, setCategories] = useState([])
+  const [CategoriesSelected, setCategoriesSelected] = useState([])
 
-  const testeBuildWeb = [
-    {
-      image: testImage2,
-      title: 'Police',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'Pharmacy',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'Hospital',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'Bank',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'Airport',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'Bus Station',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'teste',
-      description: 'subtitle',
-    },
-    {
-      image: testImage2,
-      title: 'teste',
-      description: 'subtitle',
-    },
-  ]
+  const adress = useSelector(selectAdress)
+
+  const size = useWindowSize()
+
+  async function RequestCategories(place) {
+    return await getCategoriesById(place).then((res) => {
+      setCategories(createGroupCategories(res))
+    })
+  }
+
+  async function validSelectCategory(array) {
+    if (document.querySelector('.selected')) {
+      const category = document.querySelector('.selected').getAttribute('value')
+
+      if (category === 'Locomotion') {
+        setCategoriesSelected(array.Locomotion)
+      } else if (category === 'Entertainment') {
+        setCategoriesSelected(array.Entertainment)
+      } else if (category === 'Emergency') {
+        setCategoriesSelected(array.Emergency)
+      } else if (category === 'Food') {
+        setCategoriesSelected(array.Food)
+      } else setCategoriesSelected(array.all)
+    } else {
+      setCategoriesSelected(array.all)
+    }
+  }
+
+  useEffect(() => {
+    try {
+      if (adress.value.place_id) {
+        RequestCategories(adress.value.place_id)
+      }
+    } catch (e) {}
+  }, [adress])
+
+  useEffect(() => {
+    try {
+      validSelectCategory(Categories)
+    } catch (e) {}
+  }, [Categories])
 
   return (
     <div>
       {size.width < 800 ? (
         <div className="card-Home-Page-Container">
-          {testeBuild.map((element) => {
-            return (
-              <Flip left>
-                <CardHomePageMobile
-                  img={element.image}
-                  title={element.title}
-                  description={element.description}
-                />
-              </Flip>
-            )
-          })}
+          {CategoriesSelected &&
+            CategoriesSelected.map((element) => {
+              return (
+                <Flip left>
+                  <CardHomePageMobile
+                    img={testImage}
+                    title={element.replaceAll('_', ' ')}
+                    description={''}
+                  />
+                </Flip>
+              )
+            })}
         </div>
       ) : (
         <div className="card-Home-Page-Container">
-          {testeBuildWeb.map((element) => {
-            return (
-              <Flip left>
-                <CardHomePageWeb
-                  img={element.image}
-                  title={element.title}
-                  description={element.description}
-                />
-              </Flip>
-            )
-          })}
+          {CategoriesSelected &&
+            CategoriesSelected.map((element) => {
+              return (
+                <Flip left>
+                  <CardHomePageWeb
+                    img={element.image}
+                    title={element.title}
+                    description={element.description}
+                  />
+                </Flip>
+              )
+            })}
         </div>
       )}
     </div>

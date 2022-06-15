@@ -8,7 +8,8 @@ function validationCategory(element, index, select, component) {
     'bank',
     'health',
     'drugstore',
-    'political')
+    'political',
+    'airport')
   ) {
     return (
       component || (

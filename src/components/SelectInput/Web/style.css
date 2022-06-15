@@ -1,0 +1,17 @@
+.SelectImputWeb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+}
+
+.SelectTextWeb {
+    margin: 20px;
+    color: var(--color-1);
+    font-size: var(--font-Size-2);
+}
+
+.SelectIconWeb {
+    width: 20px;
+}

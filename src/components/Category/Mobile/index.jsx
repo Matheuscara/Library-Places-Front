@@ -11,12 +11,11 @@ function CategoryMobile() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(changeSelectCategory(stateCategory))
+    dispatch(changeSelectCategory(stateCategory || ""))
   }, [stateCategory])
 
   const ChangeSelectCategory = (e) => {
     const selected = e.target
-    console.log(selected.className)
 
     if (selected.className === 'desable') {
       if (document.querySelector('.selected'))
@@ -25,7 +24,6 @@ function CategoryMobile() {
       setStateCategory(selected.getAttribute('value'))
     } else if (selected.className === 'selected') {
       setStateCategory('')
-
       selected.className = 'desable'
     }
   }
@@ -34,7 +32,7 @@ function CategoryMobile() {
     <div>
       Categories
       {category && (
-        <ul className="listUlCategories">
+        <ul className="listUlCategoriesMobile">
           {category.map((element, index) => {
             return validationCategory(element, index, ChangeSelectCategory)
           })}

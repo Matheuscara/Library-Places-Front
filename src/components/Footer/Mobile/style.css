@@ -1,0 +1,11 @@
+.FooterMobile {
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.copy {
+    font-size: 9px
+}

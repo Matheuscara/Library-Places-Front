@@ -1,0 +1,18 @@
+.SelectImputMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+    height: 250px;
+    justify-content: center;
+}
+
+.SelectTextMobile {
+    margin: 20px;
+    color: var(--color-1);
+    font-size: var(--font-Size-2);
+}
+
+.SelectIconMobile {
+    width: 20px;
+}
