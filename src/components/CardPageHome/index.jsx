@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 import { useSelector } from 'react-redux'
 import useWindowSize from '../Util/windowSize'
 import CardHomePageMobile from './Mobile/index'
@@ -17,6 +17,7 @@ function CardHomePage() {
   const [CategoriesSelected, setCategoriesSelected] = useState([])
 
   const adress = useSelector(selectAdress)
+  const selectCategoryRedux = useSelector(SelectCategory).SelectCategory.value
 
   const size = useWindowSize()
 
@@ -27,16 +28,14 @@ function CardHomePage() {
   }
 
   async function validSelectCategory(array) {
-    if (document.querySelector('.selected')) {
-      const category = document.querySelector('.selected').getAttribute('value')
-
-      if (category === 'Locomotion') {
+    if (selectCategoryRedux) {
+      if (selectCategoryRedux === 'Locomotion') {
         setCategoriesSelected(array.Locomotion)
-      } else if (category === 'Entertainment') {
+      } else if (selectCategoryRedux === 'Entertainment') {
         setCategoriesSelected(array.Entertainment)
-      } else if (category === 'Emergency') {
+      } else if (selectCategoryRedux === 'Emergency') {
         setCategoriesSelected(array.Emergency)
-      } else if (category === 'Food') {
+      } else if (selectCategoryRedux === 'Food') {
         setCategoriesSelected(array.Food)
       } else setCategoriesSelected(array.all)
     } else {
@@ -58,6 +57,12 @@ function CardHomePage() {
     } catch (e) {}
   }, [Categories])
 
+  useEffect(() => {
+    try {
+      validSelectCategory(Categories)
+    } catch (e) {}
+  }, [selectCategoryRedux])
+
   return (
     <div>
       {size.width < 800 ? (
@@ -69,7 +74,7 @@ function CardHomePage() {
                   <CardHomePageMobile
                     img={testImage}
                     title={element.replaceAll('_', ' ')}
-                    description={''}
+                    subtitle={selectCategoryRedux}
                   />
                 </Flip>
               )
@@ -84,7 +89,7 @@ function CardHomePage() {
                   <CardHomePageWeb
                     img={element.image}
                     title={element.title}
-                    description={element.description}
+                    subtitle={element.description}
                   />
                 </Flip>
               )

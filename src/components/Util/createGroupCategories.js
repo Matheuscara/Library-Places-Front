@@ -69,7 +69,6 @@ function createGroupCategories(array) {
       newObject.Food.push(element)
     }
   })
-  console.log(newObject)
   return newObject
 }
 
