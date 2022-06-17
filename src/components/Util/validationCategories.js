@@ -1,86 +1,55 @@
-function validationCategory(element, index, select, component) {
+function validationCategory(element) {
   if (
-    element ===
-    ('police',
-    'pharmacy',
-    'hospital',
-    'doctor',
-    'bank',
-    'health',
-    'drugstore',
-    'political',
-    'airport')
+    [
+      'police',
+      'pharmacy',
+      'hospital',
+      'doctor',
+      'bank',
+      'health',
+      'drugstore',
+      'political',
+      'airport',
+    ].find((category) => category === element)
   ) {
-    return (
-      component || (
-        <li
-          key={index}
-          value="Emergency"
-          onClick={(e) => select(e)}
-          className={'desable'}
-        >
-          Emergency
-        </li>
-      )
-    )
+    return 'Emergency'
   } else if (
-    element === ('light_rail_station', 'airport', 'bus_station', 'locality')
-  ) {
-    return (
-      component || (
-        <li
-          key={index}
-          value="Locomotion"
-          onClick={(e) => select(e)}
-          className={'desable'}
-        >
-          Locomotion
-        </li>
-      )
+    ['light_rail_station', 'bus_station', 'locality'].find(
+      (category) => category === element
     )
+  ) {
+    return 'Locomotion'
   } else if (
-    element ===
-    ('art_gallery',
-    'aquarium',
-    'amusement_park',
-    'book_store',
-    'casino',
-    'movie_theater',
-    'museum',
-    'night_club',
-    'park',
-    'parking',
-    'bar',
-    'point_of_interest')
+    [
+      'art_gallery',
+      'aquarium',
+      'amusement_park',
+      'book_store',
+      'casino',
+      'movie_theater',
+      'museum',
+      'night_club',
+      'park',
+      'parking',
+      'bar',
+      'point_of_interest',
+      'night_club',
+      'store',
+      'establishment',
+    ].find((category) => category === element)
   ) {
-    return (
-      component || (
-        <li
-          key={index}
-          value="Entertainment"
-          onClick={(e) => select(e)}
-          className={'desable'}
-        >
-          Entertainment
-        </li>
-      )
-    )
+    return 'Entertainment'
   } else if (
-    element ===
-    ('bakery', 'cafe', 'liquor_store', 'home_goods_store', 'restaurant', 'food')
+    [
+      'bakery',
+      'cafe',
+      'liquor_store',
+      'home_goods_store',
+      'restaurant',
+      'food',
+    ].find((category) => category === element)
   ) {
-    return (
-      component || (
-        <li
-          key={index}
-          value="Food"
-          onClick={(e) => select(e)}
-          className={'desable'}
-        >
-          Food
-        </li>
-      )
-    )
+    return 'Food'
   }
 }
 

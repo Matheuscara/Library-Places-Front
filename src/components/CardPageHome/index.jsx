@@ -72,7 +72,7 @@ function CardHomePage() {
               return (
                 <Flip left>
                   <CardHomePageMobile
-                    img={testImage}
+                    img={element}
                     title={element.replaceAll('_', ' ')}
                     subtitle={selectCategoryRedux}
                   />
@@ -87,9 +87,9 @@ function CardHomePage() {
               return (
                 <Flip left>
                   <CardHomePageWeb
-                    img={element.image}
-                    title={element.title}
-                    subtitle={element.description}
+                    img={element}
+                    title={element.replaceAll('_', ' ')}
+                    subtitle={selectCategoryRedux}
                   />
                 </Flip>
               )

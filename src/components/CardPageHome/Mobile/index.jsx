@@ -4,6 +4,7 @@ import { generatePath, useNavigate } from 'react-router-dom'
 
 function CardHomePageMobile({ img, title, subtitle }) {
   const navigate = useNavigate()
+  const logo = require(`../images/${img}.jpg`)
 
   const createPath = () => {
     const path = generatePath('/Category/:title', { title: title })
@@ -13,9 +14,9 @@ function CardHomePageMobile({ img, title, subtitle }) {
   return (
     <div className="card-home">
       <img
-        className="card-home"
+        className="imgMobilePage"
         onClick={() => createPath()}
-        src={img || testImage}
+        src={logo}
         alt="testImage"
       />
       <div className="card-home-title">{title || 'teste'}</div>

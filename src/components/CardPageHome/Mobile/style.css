@@ -8,11 +8,14 @@
 .card-home {
     padding-right: 3px;
     margin-bottom: 5px;
+    width: 150px;
+    height: 240px;
 }
 
-.card-home {
-    min-width: 109px;
-    min-height: 172px;
+.imgMobilePage {
+    width: 140px;
+    height: 200px;
+    border-radius: var(--border-Radius-1)
 }
 
 .card-home-title {

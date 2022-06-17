@@ -18,7 +18,6 @@ function createGroupCategories(array) {
         'health',
         'drugstore',
         'political',
-        'airport',
       ].find((category) => category === element)
     ) {
       newObject.all.push(element)

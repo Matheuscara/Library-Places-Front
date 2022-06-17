@@ -2,7 +2,7 @@ import './style.css'
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectCategory } from '../../../features/category/CategorySlice'
-import validationCategory from '../../Util/validationCategories'
+import createGroupCategories from '../../Util/createGroupCategories'
 import { changeSelectCategory } from '../../../features/selectCategory/selectCategory'
 
 function CategoryMobile() {
@@ -11,7 +11,7 @@ function CategoryMobile() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(changeSelectCategory(stateCategory || ""))
+    dispatch(changeSelectCategory(stateCategory || ''))
   }, [stateCategory])
 
   const ChangeSelectCategory = (e) => {
@@ -33,9 +33,46 @@ function CategoryMobile() {
       Categories
       {category && (
         <ul className="listUlCategoriesMobile">
-          {category.map((element, index) => {
-            return validationCategory(element, index, ChangeSelectCategory)
-          })}
+          {createGroupCategories(category).Emergency.length > 0 && (
+            <li
+              key="Emergency"
+              value="Emergency"
+              onClick={(e) => ChangeSelectCategory(e)}
+              className={'desable'}
+            >
+              Emergency
+            </li>
+          )}
+          {createGroupCategories(category).Entertainment.length > 0 && (
+            <li
+              key="Entertainment"
+              value="Entertainment"
+              onClick={(e) => ChangeSelectCategory(e)}
+              className={'desable'}
+            >
+              Entertainment
+            </li>
+          )}
+          {createGroupCategories(category).Food.length > 0 && (
+            <li
+              key="Food"
+              value="Food"
+              onClick={(e) => ChangeSelectCategory(e)}
+              className={'desable'}
+            >
+              Food
+            </li>
+          )}
+          {createGroupCategories(category).Locomotion.length > 0 && (
+            <li
+              key="Locomotion"
+              value="Locomotion"
+              onClick={(e) => ChangeSelectCategory(e)}
+              className={'desable'}
+            >
+              Locomotion
+            </li>
+          )}
         </ul>
       )}
       {/* */}

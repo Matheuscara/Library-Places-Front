@@ -9,7 +9,14 @@
 .card-home-web {
     padding-right: 35px;
     margin-bottom: 5px;
+    width: 280px;
+    height: 330px;
+}
+
+.imgWebPage {
     width: 290px;
+    height: 270px;
+    border-radius: var(--border-Radius-1)
 }
 
 .card-home-title-web {
