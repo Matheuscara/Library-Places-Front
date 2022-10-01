@@ -3,6 +3,7 @@ import './style.css'
 import { useDispatch } from 'react-redux'
 import { changeaDress } from '../../../features/Input/InputSlice'
 
+
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
 
 function InputWeb() {
@@ -23,7 +24,7 @@ function InputWeb() {
         </div>
         <div className="elementsInput input">
           <GooglePlacesAutocomplete
-            apiKey="AIzaSyBrdIieB0chRMudu8Gr4aKh7qA-5JBordc"
+            apiKey={process.env.GOOGLE_PLACES_KEY}
             selectProps={{
               value,
               onChange: setValue,
