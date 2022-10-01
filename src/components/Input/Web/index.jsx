@@ -24,7 +24,7 @@ function InputWeb() {
         </div>
         <div className="elementsInput input">
           <GooglePlacesAutocomplete
-            apiKey={process.env.GOOGLE_PLACES_KEY}
+            apiKey="AIzaSyAQCpRYWuDFQUT9pnoZt1CcI1kp-P_eWUo"
             selectProps={{
               value,
               onChange: setValue,
